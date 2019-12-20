@@ -2,16 +2,13 @@
 #include<vector>
 #include<string>
 #include<cstdlib>
+#include<fstream>
 namespace RGDL{
     typedef long long ll;
     const ll ll_max=0x7fffffffffffffff;
     struct point{
         ll x,y;
         point(ll x_=0,ll y_=0) :x(x_),y(y_) {}
-    };
-    struct line{
-        ll k,b;
-        line(ll k_=0,ll b_=0) :k(k_),b(b_) {}
     };
     std::vector<char> en_string;
     void init(unsigned seed){
@@ -21,7 +18,8 @@ namespace RGDL{
     }
     class rand_number{
         public:
-            ll rand_a_number(ll);
+            ll rand_a_integer(ll);
+            double rand_a_float();
             template<typename T,typename rand_func>
             void rand_a_sequence(int,std::vector<T>&,rand_func);
     }rand_number_self;
@@ -37,10 +35,19 @@ namespace RGDL{
     class rand_coordinate_system{
         public:
             point rand_a_point(void);
-            line rand_a_line(void);
+            template<typename randfunc>
+            void rand_a_function(int,std::vector<double>&,randfunc);
+            template<typename randfunc>
+            void rand_a_function(int,std::vector<ll>&,randfunc);
     }rand_coordinate_system_self;
+    class batch_generate{
+        public:
+            template<typename mainfunc>
+            void batch_generate_data(char**,int,mainfunc);
+    }batch_generate_self;
 }
 #include"RGDL-number.cpp"
 #include"RGDL-string.cpp"
-// #include"RGDL-graph.cpp"
-#include"RGDL-Coordinate_system.cpp"
+#include"RGDL-graph.cpp"
+#include"RGDL-coordinate_system.cpp"
+#include"RGDL-batch_generate.cpp"

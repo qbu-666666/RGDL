@@ -10,11 +10,11 @@ namespace RGDL{
         ll x,y;
         point(ll x_=0,ll y_=0) :x(x_),y(y_) {}
     };
-    std::vector<char> en_string;
+    std::vector<char> en_string,big_letter,small_letter;
     void init(unsigned seed){
-        std::srand(seed),en_string.clear();
-        for(int i='A';i<='Z';++i) en_string.push_back(i);
-        for(int i='a';i<='z';++i) en_string.push_back(i);
+        std::srand(seed),en_string.clear(),big_letter.clear,small_letter.clear();
+        for(int i='A';i<='Z';++i) en_string.push_back(i),big_letter.push_back(i);
+        for(int i='a';i<='z';++i) en_string.push_back(i),small_letter.push_back(i);
     }
     class rand_number{
         public:

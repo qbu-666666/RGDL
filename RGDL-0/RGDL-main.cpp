@@ -12,7 +12,7 @@ namespace RGDL{
     };
     std::vector<char> en_string,big_letter,small_letter;
     void init(unsigned seed){
-        std::srand(seed),en_string.clear(),big_letter.clear,small_letter.clear();
+        std::srand(seed),en_string.clear(),big_letter.clear(),small_letter.clear();
         for(int i='A';i<='Z';++i) en_string.push_back(i),big_letter.push_back(i);
         for(int i='a';i<='z';++i) en_string.push_back(i),small_letter.push_back(i);
     }

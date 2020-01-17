@@ -1,3 +1,4 @@
+//RGDL-coordinate_system
 namespace RGDL{
     point rand_coordinate_system::rand_a_point(void){
         return point(rand_number_self.rand_a_integer(),rand_number_self.rand_a_integer());

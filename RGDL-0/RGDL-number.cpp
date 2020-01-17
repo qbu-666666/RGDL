@@ -1,3 +1,4 @@
+//RGDL-number
 namespace RGDL{
     ll rand_number::rand_a_integer(ll mod=ll_max){
         return (ll)rand()*rand()*rand()%mod;

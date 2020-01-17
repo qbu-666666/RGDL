@@ -1,3 +1,4 @@
+//RGDL-string
 namespace RGDL{
     char rand_string::rand_a_big_letter(void){
         return rand()%26+'A';
